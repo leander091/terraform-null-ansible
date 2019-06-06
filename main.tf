@@ -27,12 +27,12 @@ resource "null_resource" "provisioner" {
   }
 }
 
-resource "null_resource" "cleanup" {
-  triggers {
-    default = "${random_id.default.hex}"
-  }
+#resource "null_resource" "cleanup" {
+#  triggers {
+#    default = "${random_id.default.hex}"
+#  }
 
-  provisioner "local-exec" {
-    command = "rm -f ${data.archive_file.default.output_path}"
-  }
-}
+ # provisioner "local-exec" {
+ #   command = "rm -f ${data.archive_file.default.output_path}"
+ # }
+#}
